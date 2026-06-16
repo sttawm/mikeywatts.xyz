@@ -6,26 +6,23 @@ Personal site — plain static HTML/CSS, hosted free on GitHub Pages at
 ## Structure
 
 ```
-index.html        Home / landing
-about.html        About Me
-research.html     ML Projects & Research
-cv.html           CV (links to assets/cv.pdf)
-blog.html         Blog index
-posts/            One HTML file per post
-style.css         All styling (light + dark)
-assets/           photo.svg, favicon.svg, cv.pdf
-CNAME             Custom domain for GitHub Pages
-404.html          Not-found page
+index.html          Home / landing (photo + bio)
+about.html          About Me
+research.html       ML Projects & Research
+presentations.html  Paper Presentations
+cv.html             CV (links to assets/cv.pdf)
+style.css           All styling (light + dark)
+assets/             photo.jpg, favicon.svg, cv.pdf
+CNAME               Custom domain for GitHub Pages
+404.html            Not-found page
 ```
 
 ## Editing
 
 - **Text/links:** edit the relevant `.html` file and push. No build step.
-- **Photo:** replace `assets/photo.svg` (or add a `.jpg`/`.png` and update the
+- **Photo:** replace `assets/photo.jpg` (keep the same filename, or update the
   `src` in `index.html`).
 - **CV:** drop your PDF at `assets/cv.pdf`.
-- **New blog post:** copy `posts/hello-world.html`, rename it, edit the content,
-  then add a matching `<li>` to `blog.html`.
 
 ## Preview locally
 
