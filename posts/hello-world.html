@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hello, world — Mikey Watts</title>
+  <meta name="description" content="A first post." />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="/">Mikey Watts</a>
+    <nav>
+      <a href="/about.html">About Me</a>
+      <a href="/research.html">ML Projects &amp; Research</a>
+      <a href="/presentations.html">Paper Presentations</a>
+      <a href="/cv.html">CV</a>
+      <a href="/blog.html">Blog</a>
+    </nav>
+  </header>
+
+  <main>
+    <article class="post">
+      <h1>Hello, world</h1>
+      <p class="meta">2026-06-16</p>
+
+      <p>
+        This is a starter post. To write a new one, copy this file in the
+        <code>posts/</code> folder, rename it (e.g. <code>my-new-post.html</code>),
+        edit the title and body, then add a matching entry to
+        <code>blog.html</code>.
+      </p>
+
+      <h2>A subheading</h2>
+      <p>
+        Regular paragraphs, <a href="#">links</a>, <strong>bold</strong>, and
+        <em>italics</em> all work out of the box. The styling lives in
+        <code>style.css</code>.
+      </p>
+
+      <p><a href="/blog.html">← Back to the blog</a></p>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <p>© <span id="year">2026</span> Mikey Watts</p>
+  </footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
