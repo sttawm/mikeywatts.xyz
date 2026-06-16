@@ -7,6 +7,7 @@ Personal site — plain static HTML/CSS, hosted free on GitHub Pages at
 
 ```
 index.html          Home / landing (photo + bio)
+about.html          About Me
 research.html       ML Projects & Research
 presentations.html  Paper Presentations
 style.css           All styling (light + dark)
