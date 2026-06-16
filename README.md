@@ -7,22 +7,22 @@ Personal site — plain static HTML/CSS, hosted free on GitHub Pages at
 
 ```
 index.html          Home / landing (photo + bio)
-about.html          About Me
 research.html       ML Projects & Research
 presentations.html  Paper Presentations
-cv.html             CV (links to assets/cv.pdf)
 style.css           All styling (light + dark)
-assets/             photo.jpg, favicon.svg, cv.pdf
+assets/             photo.jpg, favicon.svg
 CNAME               Custom domain for GitHub Pages
 404.html            Not-found page
 ```
+
+The "CV" nav link points to an external Google Doc; there is no CV page.
 
 ## Editing
 
 - **Text/links:** edit the relevant `.html` file and push. No build step.
 - **Photo:** replace `assets/photo.jpg` (keep the same filename, or update the
   `src` in `index.html`).
-- **CV:** drop your PDF at `assets/cv.pdf`.
+- **CV:** edit the Google Doc URL in the `CV` nav link across the `.html` files.
 
 ## Preview locally
 
