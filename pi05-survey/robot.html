@@ -49,6 +49,14 @@
   textarea:focus, input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
   textarea::placeholder, input::placeholder { color: var(--muted); }
   select { appearance: auto; }
+  .radio-legend { font-weight: 500; margin: 1rem 0 .3rem; }
+  .radio-hint { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+  .radio-group { display: flex; flex-direction: column; gap: .55rem; }
+  .radio-option {
+    display: flex; align-items: flex-start; gap: .55rem;
+    font-weight: 400; margin: 0; cursor: pointer;
+  }
+  .radio-option input { margin-top: .3rem; accent-color: var(--accent); flex-shrink: 0; }
   .submit-row { margin-top: 2.5rem; }
   button {
     font: inherit; font-weight: 600; background: var(--accent); color: #fff;
@@ -83,12 +91,14 @@
           <option>Non-binary</option>
           <option>Other</option>
         </select>
-        <label for="ai_robotics_research">Are you involved in AI or robotics research?</label>
-        <select id="ai_robotics_research" name="ai_robotics_research">
-          <option value="" selected>Prefer not to answer</option>
-          <option>Yes</option>
-          <option>No</option>
-        </select>
+        <p class="radio-legend">How familiar are you with AI or robotics?</p>
+        <p class="radio-hint">Think everyday tools like ChatGPT too, not just research.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Researcher or professional"> I work in AI/robotics research or as a professional</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Frequent user"> I use AI or robotics tools frequently</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Occasional user"> I use them occasionally</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Rarely or never"> I rarely or never use them</label>
+        </div>
       </div>
 
       <div class="task">
