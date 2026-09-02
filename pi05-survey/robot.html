@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pi0.5 survey — robot phrasing</title>
+
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --accent: #2563eb;
+    --border: #e5e7eb; --card: #f8f9fb; --maxw: 40rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1115; --fg: #e6e6e6; --muted: #9aa3b2; --accent: #6ea8fe; --border: #232733; --card: #161922; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  a { color: var(--accent); }
+  h1 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 .6rem; }
+  .lede { color: var(--muted); margin: 0 0 .5rem; }
+  .progress-note {
+    font-size: .85rem; color: var(--muted); margin: 0 0 2rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  }
+  .task {
+    border: 1px solid var(--border); border-radius: 10px; background: var(--card);
+    padding: 1.25rem 1.4rem 1.5rem; margin-bottom: 1.5rem;
+  }
+  .task-index { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+  video {
+    width: 100%; max-width: 320px; display: block; border-radius: 6px;
+    background: #000; border: 1px solid var(--border); margin-bottom: 1rem;
+  }
+  label { display: block; font-weight: 600; margin: 0 0 .4rem; }
+  textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg); font: inherit; padding: .6rem .7rem;
+    resize: vertical; min-height: 2.6em;
+  }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea::placeholder { color: var(--muted); }
+  .submit-row { margin-top: 2.5rem; }
+  button {
+    font: inherit; font-weight: 600; background: var(--accent); color: #fff;
+    border: none; border-radius: 6px; padding: .75rem 1.6rem; cursor: pointer;
+  }
+  button:hover { opacity: .92; }
+  .foot-link { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
+</style>
+
+</head>
+<body>
+<main>
+  <h1>Tell the robot what to do</h1>
+  <p class="lede">You'll watch 20 short clips of a robot arm completing a task. For each one, type the instruction you'd give it, phrased as a direct command — the way you'd talk to a robot assistant.</p>
+  <p class="progress-note">20 clips &middot; no sign-in &middot; ~6&ndash;8 minutes</p>
+
+  <form action="https://formspree.io/f/mdeogdlo" method="POST">
+    <input type="hidden" name="_subject" value="New pi0.5 survey response — robot phrasing">
+    <input type="hidden" name="_next" value="https://mikeywatts.xyz/pi05-survey/thanks.html">
+    <input type="text" name="_gotcha" style="display:none">
+
+      <div class="task">
+        <p class="task-index">Task 1 of 20 &middot; task_07</p>
+        <video controls muted loop playsinline src="videos/task_07.mp4"></video>
+        <label for="pi05_task_07_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_07_robot" name="pi05_task_07_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 2 of 20 &middot; task_08</p>
+        <video controls muted loop playsinline src="videos/task_08.mp4"></video>
+        <label for="pi05_task_08_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_08_robot" name="pi05_task_08_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 3 of 20 &middot; task_11</p>
+        <video controls muted loop playsinline src="videos/task_11.mp4"></video>
+        <label for="pi05_task_11_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_11_robot" name="pi05_task_11_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 4 of 20 &middot; task_18</p>
+        <video controls muted loop playsinline src="videos/task_18.mp4"></video>
+        <label for="pi05_task_18_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_18_robot" name="pi05_task_18_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 5 of 20 &middot; task_26</p>
+        <video controls muted loop playsinline src="videos/task_26.mp4"></video>
+        <label for="pi05_task_26_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_26_robot" name="pi05_task_26_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 6 of 20 &middot; task_30</p>
+        <video controls muted loop playsinline src="videos/task_30.mp4"></video>
+        <label for="pi05_task_30_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_30_robot" name="pi05_task_30_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 7 of 20 &middot; task_43</p>
+        <video controls muted loop playsinline src="videos/task_43.mp4"></video>
+        <label for="pi05_task_43_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_43_robot" name="pi05_task_43_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 8 of 20 &middot; task_45</p>
+        <video controls muted loop playsinline src="videos/task_45.mp4"></video>
+        <label for="pi05_task_45_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_45_robot" name="pi05_task_45_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 9 of 20 &middot; task_51</p>
+        <video controls muted loop playsinline src="videos/task_51.mp4"></video>
+        <label for="pi05_task_51_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_51_robot" name="pi05_task_51_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 10 of 20 &middot; task_53</p>
+        <video controls muted loop playsinline src="videos/task_53.mp4"></video>
+        <label for="pi05_task_53_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_53_robot" name="pi05_task_53_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 11 of 20 &middot; task_58</p>
+        <video controls muted loop playsinline src="videos/task_58.mp4"></video>
+        <label for="pi05_task_58_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_58_robot" name="pi05_task_58_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 12 of 20 &middot; task_62</p>
+        <video controls muted loop playsinline src="videos/task_62.mp4"></video>
+        <label for="pi05_task_62_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_62_robot" name="pi05_task_62_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 13 of 20 &middot; task_65</p>
+        <video controls muted loop playsinline src="videos/task_65.mp4"></video>
+        <label for="pi05_task_65_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_65_robot" name="pi05_task_65_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 14 of 20 &middot; task_69</p>
+        <video controls muted loop playsinline src="videos/task_69.mp4"></video>
+        <label for="pi05_task_69_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_69_robot" name="pi05_task_69_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 15 of 20 &middot; task_73</p>
+        <video controls muted loop playsinline src="videos/task_73.mp4"></video>
+        <label for="pi05_task_73_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_73_robot" name="pi05_task_73_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 16 of 20 &middot; task_80</p>
+        <video controls muted loop playsinline src="videos/task_80.mp4"></video>
+        <label for="pi05_task_80_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_80_robot" name="pi05_task_80_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 17 of 20 &middot; task_83</p>
+        <video controls muted loop playsinline src="videos/task_83.mp4"></video>
+        <label for="pi05_task_83_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_83_robot" name="pi05_task_83_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 18 of 20 &middot; task_85</p>
+        <video controls muted loop playsinline src="videos/task_85.mp4"></video>
+        <label for="pi05_task_85_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_85_robot" name="pi05_task_85_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 19 of 20 &middot; task_86</p>
+        <video controls muted loop playsinline src="videos/task_86.mp4"></video>
+        <label for="pi05_task_86_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_86_robot" name="pi05_task_86_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index">Task 20 of 20 &middot; task_88</p>
+        <video controls muted loop playsinline src="videos/task_88.mp4"></video>
+        <label for="pi05_task_88_robot">How would you tell a robot assistant to do this?</label>
+        <textarea id="pi05_task_88_robot" name="pi05_task_88_robot" required placeholder="e.g. "Open top drawer, cabinet.""></textarea>
+      </div>
+    <div class="submit-row">
+      <button type="submit">Submit answers</button>
+    </div>
+  </form>
+
+  <p class="foot-link"><a href="/">mikeywatts.xyz</a></p>
+</main>
+</body>
+</html>

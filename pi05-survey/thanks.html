@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thanks — pi0.5 survey</title>
+
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --accent: #2563eb;
+    --border: #e5e7eb; --card: #f8f9fb; --maxw: 40rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1115; --fg: #e6e6e6; --muted: #9aa3b2; --accent: #6ea8fe; --border: #232733; --card: #161922; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  a { color: var(--accent); }
+  h1 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 .6rem; }
+  .lede { color: var(--muted); margin: 0 0 .5rem; }
+  .progress-note {
+    font-size: .85rem; color: var(--muted); margin: 0 0 2rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  }
+  .task {
+    border: 1px solid var(--border); border-radius: 10px; background: var(--card);
+    padding: 1.25rem 1.4rem 1.5rem; margin-bottom: 1.5rem;
+  }
+  .task-index { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+  video {
+    width: 100%; max-width: 320px; display: block; border-radius: 6px;
+    background: #000; border: 1px solid var(--border); margin-bottom: 1rem;
+  }
+  label { display: block; font-weight: 600; margin: 0 0 .4rem; }
+  textarea {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg); font: inherit; padding: .6rem .7rem;
+    resize: vertical; min-height: 2.6em;
+  }
+  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea::placeholder { color: var(--muted); }
+  .submit-row { margin-top: 2.5rem; }
+  button {
+    font: inherit; font-weight: 600; background: var(--accent); color: #fff;
+    border: none; border-radius: 6px; padding: .75rem 1.6rem; cursor: pointer;
+  }
+  button:hover { opacity: .92; }
+  .foot-link { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
+</style>
+
+</head>
+<body>
+<main>
+  <h1>That's it &mdash; thanks!</h1>
+  <p class="lede">Your answers help us see how phrasing shifts by audience. Nothing else to do here.</p>
+  <p class="foot-link"><a href="/">mikeywatts.xyz</a></p>
+</main>
+</body>
+</html>
