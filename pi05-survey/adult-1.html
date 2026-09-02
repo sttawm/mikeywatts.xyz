@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>pi0.5 survey — adult phrasing (part 1)</title>
+
+<style>
+  :root {
+    --bg: #ffffff; --fg: #1a1a1a; --muted: #6b7280; --accent: #2563eb;
+    --border: #e5e7eb; --card: #f8f9fb; --maxw: 40rem;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0f1115; --fg: #e6e6e6; --muted: #9aa3b2; --accent: #6ea8fe; --border: #232733; --card: #161922; }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 17px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  main { max-width: var(--maxw); margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  a { color: var(--accent); }
+  h1 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 .6rem; }
+  .part-tag {
+    display: inline-block; font-size: .78rem; font-weight: 600; color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 14%, transparent);
+    border-radius: 999px; padding: .15rem .6rem; margin: 0 0 .7rem;
+  }
+  .continued-banner {
+    display: none; font-size: .88rem; background: color-mix(in srgb, var(--accent) 10%, transparent);
+    border: 1px solid var(--border); border-radius: 8px; padding: .7rem .9rem; margin: 0 0 1.25rem;
+  }
+  .continued-banner.show { display: block; }
+  .lede { color: var(--muted); margin: 0 0 .5rem; }
+  .progress-note {
+    font-size: .85rem; color: var(--muted); margin: 0 0 2rem;
+    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  }
+  .task {
+    border: 1px solid var(--border); border-radius: 10px; background: var(--card);
+    padding: 1.25rem 1.4rem 1.5rem; margin-bottom: 1.5rem;
+  }
+  .task-index { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+  .demographics .task-index { font-size: .85rem; color: var(--fg); font-weight: 600; }
+  .field-note { font-size: .8rem; color: var(--muted); margin: 0 0 1rem; }
+  .remembered-note {
+    display: none; font-size: .8rem; color: var(--accent); margin: 0 0 1rem; font-weight: 500;
+  }
+  .remembered-note.show { display: block; }
+  video {
+    width: 100%; max-width: 320px; display: block; border-radius: 6px;
+    background: #000; border: 1px solid var(--border); margin-bottom: 1rem;
+  }
+  label { display: block; font-weight: 600; margin: 0 0 .4rem; }
+  .demographics label { font-weight: 500; margin: 1rem 0 .4rem; }
+  .demographics label:first-of-type { margin-top: 0; }
+  textarea, input[type="number"], select {
+    width: 100%; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--bg); color: var(--fg); font: inherit; padding: .6rem .7rem;
+  }
+  textarea { resize: vertical; min-height: 2.6em; }
+  textarea:focus, input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+  textarea::placeholder, input::placeholder { color: var(--muted); }
+  select { appearance: auto; }
+  .radio-legend { font-weight: 500; margin: 1rem 0 .3rem; }
+  .radio-hint { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
+  .radio-group { display: flex; flex-direction: column; gap: .55rem; }
+  .radio-option {
+    display: flex; align-items: flex-start; gap: .55rem;
+    font-weight: 400; margin: 0; cursor: pointer;
+  }
+  .radio-option input { margin-top: .3rem; accent-color: var(--accent); flex-shrink: 0; }
+  .submit-row { margin-top: 2.5rem; }
+  button {
+    font: inherit; font-weight: 600; background: var(--accent); color: #fff;
+    border: none; border-radius: 6px; padding: .75rem 1.6rem; cursor: pointer;
+  }
+  button:hover { opacity: .92; }
+  .foot-link { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
+</style>
+
+</head>
+<body>
+<main>
+  <span class="part-tag">Part 1 of 2</span>
+  <div class="continued-banner" id="continued-banner">Thanks for the last set! Here's another if you're up for it — totally fine to stop here too, just close the tab.</div>
+  <h1>Tell the robot what to do</h1>
+  <p class="lede">You'll watch 14 short clips of a robot arm completing a task. For each clip, type the instruction you'd give — the way you'd ask an adult.</p>
+  <p class="progress-note">14 clips (shown in random order) &middot; no sign-in &middot; ~5&ndash;6 minutes &middot; after submitting you'll be offered another set &mdash; entirely optional</p>
+
+  <form action="https://formspree.io/f/mdeogdlo" method="POST">
+    <input type="hidden" name="_subject" value="New pi0.5 survey response — adult phrasing (part 1)">
+    <input type="hidden" name="_next" value="https://mikeywatts.xyz/pi05-survey/thanks.html">
+    <input type="text" name="_gotcha" style="display:none">
+
+      <div class="task demographics">
+        <p class="task-index">About you (optional, kept anonymous)</p>
+        <p class="field-note">No name or email is collected — these just help us understand who answered.</p>
+        <p class="remembered-note" id="remembered-note">Filled in from your last submission — change it if you'd like.</p>
+        <label for="age">Age</label>
+        <input type="number" id="age" name="age" min="1" max="120" placeholder="e.g. 29">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="" selected>Prefer not to answer</option>
+          <option>Woman</option>
+          <option>Man</option>
+          <option>Non-binary</option>
+          <option>Other</option>
+        </select>
+        <p class="radio-legend">How familiar are you with AI or robotics?</p>
+        <p class="radio-hint">Think everyday tools like ChatGPT too, not just research.</p>
+        <div class="radio-group">
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Researcher or professional"> I work in AI/robotics research or as a professional</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Frequent user"> I use AI or robotics tools frequently</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Occasional user"> I use them occasionally</label>
+          <label class="radio-option"><input type="radio" name="ai_robotics_familiarity" value="Rarely or never"> I rarely or never use them</label>
+        </div>
+      </div>
+
+      <div class="task">
+        <p class="task-index" data-dir="task_07">Clip &middot; task_07</p>
+        <video autoplay controls muted loop playsinline src="videos/task_07.mp4"></video>
+        <label for="pi05_task_07_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_07_adult" name="pi05_task_07_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_08">Clip &middot; task_08</p>
+        <video autoplay controls muted loop playsinline src="videos/task_08.mp4"></video>
+        <label for="pi05_task_08_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_08_adult" name="pi05_task_08_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_11">Clip &middot; task_11</p>
+        <video autoplay controls muted loop playsinline src="videos/task_11.mp4"></video>
+        <label for="pi05_task_11_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_11_adult" name="pi05_task_11_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_18">Clip &middot; task_18</p>
+        <video autoplay controls muted loop playsinline src="videos/task_18.mp4"></video>
+        <label for="pi05_task_18_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_18_adult" name="pi05_task_18_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_26">Clip &middot; task_26</p>
+        <video autoplay controls muted loop playsinline src="videos/task_26.mp4"></video>
+        <label for="pi05_task_26_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_26_adult" name="pi05_task_26_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_30">Clip &middot; task_30</p>
+        <video autoplay controls muted loop playsinline src="videos/task_30.mp4"></video>
+        <label for="pi05_task_30_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_30_adult" name="pi05_task_30_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_43">Clip &middot; task_43</p>
+        <video autoplay controls muted loop playsinline src="videos/task_43.mp4"></video>
+        <label for="pi05_task_43_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_43_adult" name="pi05_task_43_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_45">Clip &middot; task_45</p>
+        <video autoplay controls muted loop playsinline src="videos/task_45.mp4"></video>
+        <label for="pi05_task_45_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_45_adult" name="pi05_task_45_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_51">Clip &middot; task_51</p>
+        <video autoplay controls muted loop playsinline src="videos/task_51.mp4"></video>
+        <label for="pi05_task_51_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_51_adult" name="pi05_task_51_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="task_53">Clip &middot; task_53</p>
+        <video autoplay controls muted loop playsinline src="videos/task_53.mp4"></video>
+        <label for="pi05_task_53_adult">How would you tell an adult to do this?</label>
+        <textarea id="pi05_task_53_adult" name="pi05_task_53_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="widowx_carrot_on_plate">Clip &middot; widowx_carrot_on_plate</p>
+        <video autoplay controls muted loop playsinline src="videos/widowx_carrot_on_plate.mp4"></video>
+        <label for="widowx_carrot_on_plate_adult">How would you tell an adult to do this?</label>
+        <textarea id="widowx_carrot_on_plate_adult" name="widowx_carrot_on_plate_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="widowx_spoon_on_towel">Clip &middot; widowx_spoon_on_towel</p>
+        <video autoplay controls muted loop playsinline src="videos/widowx_spoon_on_towel.mp4"></video>
+        <label for="widowx_spoon_on_towel_adult">How would you tell an adult to do this?</label>
+        <textarea id="widowx_spoon_on_towel_adult" name="widowx_spoon_on_towel_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="widowx_stack_cube">Clip &middot; widowx_stack_cube</p>
+        <video autoplay controls muted loop playsinline src="videos/widowx_stack_cube.mp4"></video>
+        <label for="widowx_stack_cube_adult">How would you tell an adult to do this?</label>
+        <textarea id="widowx_stack_cube_adult" name="widowx_stack_cube_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+      <div class="task">
+        <p class="task-index" data-dir="widowx_put_eggplant_in_basket">Clip &middot; widowx_put_eggplant_in_basket</p>
+        <video autoplay controls muted loop playsinline src="videos/widowx_put_eggplant_in_basket.mp4"></video>
+        <label for="widowx_put_eggplant_in_basket_adult">How would you tell an adult to do this?</label>
+        <textarea id="widowx_put_eggplant_in_basket_adult" name="widowx_put_eggplant_in_basket_adult" required placeholder="e.g. "Open the cabinet's top drawer.""></textarea>
+      </div>
+    <div class="submit-row">
+      <button type="submit">Submit answers</button>
+    </div>
+  </form>
+
+  <p class="foot-link"><a href="/">mikeywatts.xyz</a></p>
+</main>
+
+<script>
+  (function () {
+    var CYCLE = ['robot-1', 'robot-2', 'kid-1', 'kid-2', 'adult-1', 'adult-2'];
+    var PAGE_ID = 'adult-1';
+    var form = document.querySelector("form");
+
+    // Shuffle the task cards (not the demographics block) on each load.
+    var tasks = Array.prototype.slice.call(form.querySelectorAll(".task:not(.demographics)"));
+    for (var i = tasks.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var tmp = tasks[i]; tasks[i] = tasks[j]; tasks[j] = tmp;
+    }
+    var submitRow = form.querySelector(".submit-row");
+    tasks.forEach(function (el, idx) {
+      var label = el.querySelector(".task-index");
+      label.textContent = "Clip " + (idx + 1) + " of " + tasks.length + " \u00b7 " + label.dataset.dir;
+      form.insertBefore(el, submitRow);
+    });
+
+    function getCompleted() {
+      try { return JSON.parse(localStorage.getItem("pi05_completed") || "[]"); }
+      catch (e) { return []; }
+    }
+
+    // Next stop: walk forward from this page around the cycle, skipping
+    // anything already completed on this browser, wrapping past the end.
+    // If every page is done, send them to thanks.html instead.
+    function nextPage(completedAfterThis) {
+      var start = CYCLE.indexOf(PAGE_ID);
+      for (var step = 1; step <= CYCLE.length; step++) {
+        var candidate = CYCLE[(start + step) % CYCLE.length];
+        if (completedAfterThis.indexOf(candidate) === -1) return candidate;
+      }
+      return null;
+    }
+
+    // Restore demographics from an earlier part in this session, if any.
+    try {
+      var age = localStorage.getItem("pi05_demo_age");
+      var gender = localStorage.getItem("pi05_demo_gender");
+      var familiarity = localStorage.getItem("pi05_demo_familiarity");
+      var any = false;
+      if (age) { document.getElementById("age").value = age; any = true; }
+      if (gender) { document.getElementById("gender").value = gender; any = true; }
+      if (familiarity) {
+        var r = form.querySelector('input[name="ai_robotics_familiarity"][value="' + familiarity + '"]');
+        if (r) { r.checked = true; any = true; }
+      }
+      if (any) document.getElementById("remembered-note").classList.add("show");
+    } catch (e) {}
+
+    if (location.search.indexOf("continued=1") !== -1) {
+      var banner = document.getElementById("continued-banner");
+      if (banner) banner.classList.add("show");
+    }
+
+    // On submit: mark this page done, compute the real next stop, save
+    // demographics, all right before the form navigates away.
+    form.addEventListener("submit", function () {
+      try {
+        var completed = getCompleted();
+        if (completed.indexOf(PAGE_ID) === -1) completed.push(PAGE_ID);
+        localStorage.setItem("pi05_completed", JSON.stringify(completed));
+
+        var next = nextPage(completed);
+        var nextField = form.querySelector('input[name="_next"]');
+        if (nextField) {
+          nextField.value = next ? 'https://mikeywatts.xyz/pi05-survey' + "/" + next + ".html?continued=1" : 'https://mikeywatts.xyz/pi05-survey' + "/thanks.html";
+        }
+
+        var ageVal = document.getElementById("age").value;
+        var genderVal = document.getElementById("gender").value;
+        var famVal = form.querySelector('input[name="ai_robotics_familiarity"]:checked');
+        if (ageVal) localStorage.setItem("pi05_demo_age", ageVal);
+        if (genderVal) localStorage.setItem("pi05_demo_gender", genderVal);
+        if (famVal) localStorage.setItem("pi05_demo_familiarity", famVal.value);
+      } catch (e) {}
+    });
+  })();
+</script>
+
+</body>
+</html>
