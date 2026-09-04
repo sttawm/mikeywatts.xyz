@@ -32,6 +32,7 @@
     border: 1px solid var(--border); border-radius: 8px; padding: .7rem .9rem; margin: 0 0 1.25rem;
   }
   .continued-banner.show { display: block; }
+  .demographics.skip-on-continue { display: none; }
   .lede { color: var(--muted); margin: 0 0 .5rem; }
   .progress-note {
     font-size: .85rem; color: var(--muted); margin: 0 0 2rem;
@@ -94,7 +95,7 @@
     <input type="hidden" name="_next" value="https://mikeywatts.xyz/robot-phrasing-survey/thanks.html">
     <input type="text" name="_gotcha" style="display:none">
 
-      <div class="task demographics">
+      <div class="task demographics" id="demographics-block">
         <p class="task-index">About you (optional, kept anonymous)</p>
         <p class="field-note">No name or email is collected — these just help us understand who answered.</p>
         <p class="remembered-note" id="remembered-note">Filled in from your last submission — change it if you'd like.</p>
@@ -262,6 +263,14 @@
     if (location.search.indexOf("continued=1") !== -1) {
       var banner = document.getElementById("continued-banner");
       if (banner) banner.classList.add("show");
+
+      // Already collected demographics on an earlier part this loop --
+      // hide the summary and jump straight to the first question instead
+      // of making them scroll/tab past it again.
+      var demo = document.getElementById("demographics-block");
+      if (demo) demo.classList.add("skip-on-continue");
+      var firstTextarea = form.querySelector(".task:not(.demographics) textarea");
+      if (firstTextarea) { firstTextarea.focus(); firstTextarea.scrollIntoView({ block: "center" }); }
     }
 
     form.addEventListener("submit", function () {
