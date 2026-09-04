@@ -270,7 +270,7 @@
       var demo = document.getElementById("demographics-block");
       if (demo) demo.classList.add("skip-on-continue");
       var firstTextarea = form.querySelector(".task:not(.demographics) textarea");
-      if (firstTextarea) { firstTextarea.focus(); firstTextarea.scrollIntoView({ block: "center" }); }
+      if (firstTextarea) firstTextarea.focus({ preventScroll: true });
     }
 
     form.addEventListener("submit", function () {
@@ -282,7 +282,7 @@
         var next = nextPage(completed);
         var nextField = form.querySelector('input[name="_next"]');
         if (nextField) {
-          nextField.value = next ? 'https://mikeywatts.xyz/robot-phrasing-survey' + "/" + next + ".html?continued=1" : 'https://mikeywatts.xyz/robot-phrasing-survey' + "/thanks.html";
+          nextField.value = 'https://mikeywatts.xyz/robot-phrasing-survey/thanks.html' + (next ? "?next=" + next : "");
         }
 
         var ageVal = document.getElementById("age").value;

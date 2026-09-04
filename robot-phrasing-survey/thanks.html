@@ -23,42 +23,52 @@
   a { color: var(--accent); }
   h1 { font-size: 1.85rem; line-height: 1.2; margin: 0 0 .6rem; }
   .lede { color: var(--muted); margin: 0 0 .5rem; }
-  .progress-note {
-    font-size: .85rem; color: var(--muted); margin: 0 0 2rem;
-    padding-bottom: 1.25rem; border-bottom: 1px solid var(--border);
+  .continue-card {
+    display: none; border: 1px solid var(--border); border-radius: 10px; background: var(--card);
+    padding: 1.25rem 1.4rem 1.5rem; margin: 1.5rem 0;
   }
-  .task {
-    border: 1px solid var(--border); border-radius: 10px; background: var(--card);
-    padding: 1.25rem 1.4rem 1.5rem; margin-bottom: 1.5rem;
-  }
-  .task-index { font-size: .8rem; color: var(--muted); margin: 0 0 .6rem; }
-  video {
-    width: 100%; max-width: 320px; display: block; border-radius: 6px;
-    background: #000; border: 1px solid var(--border); margin-bottom: 1rem;
-  }
-  label { display: block; font-weight: 600; margin: 0 0 .4rem; }
-  textarea {
-    width: 100%; border: 1px solid var(--border); border-radius: 6px;
-    background: var(--bg); color: var(--fg); font: inherit; padding: .6rem .7rem;
-    resize: vertical; min-height: 2.6em;
-  }
-  textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
-  textarea::placeholder { color: var(--muted); }
-  .submit-row { margin-top: 2.5rem; }
-  button {
+  .continue-card.show { display: block; }
+  .continue-card p { color: var(--muted); margin: 0 0 1rem; }
+  button, .btn {
     font: inherit; font-weight: 600; background: var(--accent); color: #fff;
     border: none; border-radius: 6px; padding: .75rem 1.6rem; cursor: pointer;
+    display: inline-block; text-decoration: none;
   }
-  button:hover { opacity: .92; }
+  button:hover, .btn:hover { opacity: .92; }
   .foot-link { margin-top: 3rem; font-size: .9rem; color: var(--muted); }
 </style>
 
 </head>
 <body>
 <main>
-  <h1>That's it &mdash; thanks!</h1>
-  <p class="lede">Your answers help us see how robots respond to variations in phrasing. Nothing else to do here.</p>
+  <h1 id="heading">Thanks!</h1>
+  <p class="lede" id="lede">Your answers help us see how robots respond to variations in phrasing.</p>
+
+  <div class="continue-card" id="continue-card">
+    <p>If you've got a bit more energy, there's another set of 14 clips waiting — a different audience or a different half of the clips. Totally optional, no pressure either way.</p>
+    <a class="btn" id="continue-link" href="#">Do another set &rarr;</a>
+  </div>
+
   <p class="foot-link"><a href="/">mikeywatts.xyz</a></p>
 </main>
+
+<script>
+  (function () {
+    var params = new URLSearchParams(location.search);
+    var next = params.get("next");
+    var VALID = ["robot-1", "robot-2", "kid-1", "kid-2", "adult-1", "adult-2"];
+
+    if (next && VALID.indexOf(next) !== -1) {
+      document.getElementById("heading").textContent = "Thanks for that set!";
+      document.getElementById("lede").textContent = "Your answers help us see how robots respond to variations in phrasing. Nothing else required here.";
+      var card = document.getElementById("continue-card");
+      card.classList.add("show");
+      document.getElementById("continue-link").href = next + ".html?continued=1";
+    } else {
+      document.getElementById("heading").textContent = "That's it — thanks!";
+      document.getElementById("lede").textContent = "Your answers help us see how robots respond to variations in phrasing. You've gone through everything there is — nothing else to do here.";
+    }
+  })();
+</script>
 </body>
 </html>
