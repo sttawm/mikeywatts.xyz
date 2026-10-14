@@ -16,14 +16,16 @@ CNAME               Custom domain for GitHub Pages
 404.html            Not-found page
 ```
 
-The "CV" nav link points to an external Google Doc; there is no CV page.
+The CV is an external Google Doc, linked from the homepage links row and
+reachable at `/cv` (a redirect page in `cv/index.html`).
 
 ## Editing
 
 - **Text/links:** edit the relevant `.html` file and push. No build step.
 - **Photo:** replace `assets/photo.jpg` (keep the same filename, or update the
   `src` in `index.html`).
-- **CV:** edit the Google Doc URL in the `CV` nav link across the `.html` files.
+- **CV:** edit the Google Doc URL in `cv/index.html` and in the links row of
+  `index.html`.
 
 ## Preview locally
 
