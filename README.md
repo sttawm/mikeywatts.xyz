@@ -6,8 +6,8 @@ Personal site — plain static HTML/CSS, hosted free on GitHub Pages at
 ## Structure
 
 ```
-index.html          Home / landing (photo + bio)
-about.html          About Me
+index.html          Home: photo, links, and the full bio (About Me lives here)
+about.html          Redirect to / (kept so old links still work)
 research.html       ML Projects & Research
 presentations.html  Paper Presentations
 style.css           All styling (light + dark)
